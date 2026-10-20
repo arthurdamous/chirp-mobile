@@ -162,12 +162,11 @@ fun ChirpTextFieldEmptyPreview() {
     ChirpTheme {
         ChirpTextField(
             state = rememberTextFieldState(),
-            modifier = Modifier.width(300.dp),
+            modifier = Modifier
+                .width(300.dp),
             placeholder = "test@test.com",
             title = "Email",
             supportingText = "Please enter your email",
-            isError = false,
-            singleLine = true
         )
     }
 }
@@ -179,13 +178,14 @@ fun ChirpTextFieldEmptyPreview() {
 fun ChirpTextFieldFilledPreview() {
     ChirpTheme {
         ChirpTextField(
-            state = rememberTextFieldState(),
-            modifier = Modifier.width(300.dp),
+            state = rememberTextFieldState(
+                initialText = "test@test.com"
+            ),
+            modifier = Modifier
+                .width(300.dp),
             placeholder = "test@test.com",
             title = "Email",
             supportingText = "Please enter your email",
-            isError = false,
-            singleLine = true
         )
     }
 }
@@ -198,12 +198,11 @@ fun ChirpTextFieldDisabledPreview() {
     ChirpTheme {
         ChirpTextField(
             state = rememberTextFieldState(),
-            modifier = Modifier.width(300.dp),
+            modifier = Modifier
+                .width(300.dp),
             placeholder = "test@test.com",
             title = "Email",
             supportingText = "Please enter your email",
-            isError = false,
-            singleLine = true,
             enabled = false
         )
     }
@@ -217,13 +216,12 @@ fun ChirpTextFieldErrorPreview() {
     ChirpTheme {
         ChirpTextField(
             state = rememberTextFieldState(),
-            modifier = Modifier.width(300.dp),
+            modifier = Modifier
+                .width(300.dp),
             placeholder = "test@test.com",
             title = "Email",
-            supportingText = "Please enter your email",
+            supportingText = "This is not a valid email",
             isError = true,
-            singleLine = true,
-            enabled = false
         )
     }
 }
